@@ -64,7 +64,7 @@ function App() {
     <div className="App">
       <header>
         <div className="header">Catify</div>
-        <div className="subHeader">Your daily does of Cats</div>
+        <div className="subHeader">Your daily dose of Cats</div>
         <div className="quote">“{catQuote}”</div>
       </header>
       <main>
