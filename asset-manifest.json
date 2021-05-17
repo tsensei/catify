@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/catify/static/css/main.09001c62.chunk.css",
+    "main.js": "/catify/static/js/main.5b8bed0c.chunk.js",
+    "main.js.map": "/catify/static/js/main.5b8bed0c.chunk.js.map",
+    "runtime-main.js": "/catify/static/js/runtime-main.7ab7eb44.js",
+    "runtime-main.js.map": "/catify/static/js/runtime-main.7ab7eb44.js.map",
+    "static/js/2.3cf42ef5.chunk.js": "/catify/static/js/2.3cf42ef5.chunk.js",
+    "static/js/2.3cf42ef5.chunk.js.map": "/catify/static/js/2.3cf42ef5.chunk.js.map",
+    "index.html": "/catify/index.html",
+    "static/css/main.09001c62.chunk.css.map": "/catify/static/css/main.09001c62.chunk.css.map",
+    "static/js/2.3cf42ef5.chunk.js.LICENSE.txt": "/catify/static/js/2.3cf42ef5.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/catify/static/media/bg.98121588.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7ab7eb44.js",
+    "static/js/2.3cf42ef5.chunk.js",
+    "static/css/main.09001c62.chunk.css",
+    "static/js/main.5b8bed0c.chunk.js"
+  ]
+}
