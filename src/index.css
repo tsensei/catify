@@ -16,18 +16,26 @@
   box-sizing: border-box;
 }
 
+body,
+html {
+  height: 100%;
+  margin: 0;
+}
+
 body {
   background: url("./assets/images/bg.jpg");
   background-size: cover;
 }
 
 .App {
+  font-family: "sweety-cats";
   display: flex;
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
   width: 100%;
   padding: 1rem;
+  position: relative;
 }
 
 header {
@@ -46,7 +54,6 @@ header .subHeader {
 }
 
 main {
-  font-family: "sweety-cats";
   text-align: center;
   display: grid;
   grid-template-rows: repeat(10, 300px);
@@ -69,4 +76,24 @@ main {
 .catImg {
   height: 100%;
   width: 100%;
+}
+
+.loadMore {
+  padding: 10px 15px;
+  margin: 2rem 0;
+  font-family: "sweety-cats";
+  background-color: hsl(350, 100%, 88%);
+  border: none;
+  box-shadow: 3px 3px hsl(350, 100%, 50%);
+}
+
+footer {
+  position: absolute;
+  bottom: 2px;
+}
+
+footer a {
+  color: black;
+  font-weight: 600;
+  text-decoration: none;
 }

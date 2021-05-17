@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 function App() {
   const [catQuote, setCatQuote] = useState("Loading");
   const [catData, setCatData] = useState([]);
-
+  const [isCatDataUpdated, setIsCatDataUpdated] = useState(false);
+  const isShuffeled = useRef(false);
+  const [contentLimit, setContentLimit] = useState(10);
   //Algorithm for shuffling the id array
 
   function shuffleArray(array) {
@@ -31,7 +33,7 @@ function App() {
         .then((res) => res.json())
         .then((results) => {
           let tempData = [];
-          results.map((result) => {
+          results.forEach((result) => {
             tempData.push(result.id);
           });
 
@@ -42,11 +44,21 @@ function App() {
     fetchCatData();
   }, []);
 
-  function catCB() {
+  useEffect(() => {
     if (typeof catData[0] !== "undefined") {
-      console.log(catData);
+      setIsCatDataUpdated(true);
     }
-  }
+  }, [catData]);
+
+  useEffect(() => {
+    if (typeof catData[0] !== "undefined") {
+      let shuffArr = Array.from(catData);
+      shuffleArray(shuffArr);
+      setCatData(shuffArr);
+      isShuffeled.current = true;
+    }
+    // eslint-disable-next-line
+  }, [isCatDataUpdated]);
 
   return (
     <div className="App">
@@ -56,8 +68,8 @@ function App() {
         <div className="quote">“{catQuote}”</div>
       </header>
       <main>
-        {typeof catData[0] !== undefined ? (
-          catData.slice(0, 10).map((data) => {
+        {typeof catData[0] !== undefined && isShuffeled ? (
+          catData.slice(0, contentLimit).map((data) => {
             return (
               <div className="imgDiv">
                 <img
@@ -72,6 +84,20 @@ function App() {
           <h1>loading</h1>
         )}
       </main>
+      <button
+        className="loadMore"
+        onClick={() => {
+          setContentLimit((prevLimit) => {
+            return prevLimit + 10;
+          });
+        }}
+      >
+        Load More
+      </button>
+      <footer>
+        Made with ❤️️ by{" "}
+        <a href="https://www.instagram.com/_tsensei_/">tsensei</a>
+      </footer>
     </div>
   );
 }
