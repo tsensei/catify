@@ -103,4 +103,9 @@ footer a {
     grid-template-rows: 600px;
     grid-template-columns: 600px;
   }
+
+  .quote {
+    font-size: 2rem;
+    margin: 1rem;
+  }
 }
